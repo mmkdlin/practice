@@ -19,3 +19,16 @@ function updateScore() {
         boostRatio * 5;
     document.getElementById("totalPt").innerHTML = totalScore;
 }
+
+function addToMemoryList() {
+    updateScore();
+    document.getElementById("memoryBoxTbody").innerHTML += "<tr>" +
+        "<td>" + personalScore + "</td>" +
+        "<td>" + teammateAverage + "</td>" +
+        "<td>" + scoreRatio + "</td>" +
+        "<td>" + boostRatio + "</td>" +
+        "<td>" + totalScore + "</td>" +
+        "</tr>";
+    var newMemoryBoxSize = parseInt(window.getComputedStyle(document.getElementById("memoryBox")).getPropertyValue('height')) + 41;
+    document.getElementById("memoryBox").setAttribute("style", "height:" + newMemoryBoxSize + "px");
+}
